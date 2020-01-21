@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 
+# Create Functions To Render html Template Files
+# Allows urls.py to call views by name
 def index(request):
     return render(request, 'blogs/index.html')
 

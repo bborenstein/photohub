@@ -29,10 +29,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition 
-
+## django-bootstrap4 added here
+## additional apps created added here (blogs, postings, photographers)
 INSTALLED_APPS = [
     'bootstrap4',
     'blogs.apps.BlogsConfig',
+    'postings.apps.PostingsConfig',
+    'photographers.apps.PhotographersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
