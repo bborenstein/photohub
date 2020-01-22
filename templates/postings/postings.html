@@ -8,7 +8,8 @@
     Featured Blog Posts
   </h1>
     <!-- All Projects Contained Here | Fetched via Context Variable -->
-      {% if postings %}    
+      {% if postings %}
+        <!-- Loop Through postings_posting Postgres Table and Display Dynamic Values -->    
         {% for posting in postings %}
           <div class="row">
             <div class="col-md-7">      
@@ -19,12 +20,13 @@
             <div class="col-md-5">
               <h3>{{ posting.title }}</h3>
               <p>{{ posting.description }}</p>
-              <a class="btn btn-primary" href="#">View Blog Post</a>
-            </div>
+              <a class="btn btn-primary" href="{% url 'posting' posting.id %}">View Blog Post</a>
+            </div> 
           </div>
-          <!-- row br -->
+          <!-- Hard Line Styling Break -->>
           <hr>
         {% endfor %}
+      <!-- If None Exist, Return This-->
       {% else %}
         <div class="col-md-12">
           <p>No Postings!</p>

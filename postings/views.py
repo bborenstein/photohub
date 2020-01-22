@@ -15,5 +15,6 @@ def index(request):
     # Context Must Be Passed Into Render Function 
     return render(request, 'postings/postings.html', context)
 
-def posting(request):
+# Must Pass In 'posting_id' As Parameter 
+def posting(request, posting_id): 
     return render(request, 'postings/posting.html')
