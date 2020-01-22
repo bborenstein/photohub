@@ -12,7 +12,7 @@ class PhotographerAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'email', 'telegram', 'hire_date')
     list_display_links = ('id', 'name')
     search_fields = ('name',)
-    list_per_page = 10
+    list_per_page = 5
 
 # Registers Form by Passing in Fields;
 ## 'Photographer' Connects to postgresql

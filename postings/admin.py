@@ -16,7 +16,7 @@ class PostingAdmin(admin.ModelAdmin):
     list_filter = ('photographer',)
     list_editale = ('is_published')
     search_fields = ('title', 'location', 'posted_date')
-    list_per_page = 10
+    list_per_page = 5
 
 # Registers Postings Form by Passing in Fields;
 ## 'Posting' Connects to Postgresql 
