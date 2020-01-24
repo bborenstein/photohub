@@ -3,33 +3,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- FONT AWESOME -->
+    {% include 'partials/_meta.html' %}
+    <!-- Font Awesome Icon Pack -->
     <script src="https://kit.fontawesome.com/aff0b87be1.js" crossorigin="anonymous"></script>
 
-    <!-- DJANGO-BOOTSTRAP4-LIBS -->
+    <!-- Import Bootsrap CSS Jquery Messages via Django-Bootstrap4 Package | See myblog/settings.py -->
     {% load bootstrap4 %}
     {% bootstrap_css %}
     {% bootstrap_javascript jquery='full' %}
     {% bootstrap_messages  %}
-    
+    <!-- Browser Title -->
     <title>Photo by Bryan</title>
 </head>
 <body>
-    <!-- NAVBAR & TOPBAR -->
-    <!-- includes bring in partials-->
-    {% include 'partials/_topbar.html' %}
+    <!-- Bring In Navbar For All Pages -->
     {% include 'partials/_navbar.html' %}
-
         {% block content %}
-            <!-- PAGE CONTENT -->
+            <!-- All Page Content Goes Here -->
         {% endblock %}  
-
+    <!-- Bring In Footer For All Pages -->
     {% include 'partials/_footer.html' %}
-    <!-- BOOTSTRAP CSS & JQUERY -->
-    
 </body>
 </html>

@@ -4,73 +4,8 @@
 <section class="py-5">
     <div class="row">
 <div class="container">
-    <h1 class="my-4">{{ posting.title  }}</h1>
-    <h4>{{ posting.location }} in {{ posting.city }}, {{ posting.state }}</h4>
-    <hr>
-    <h5 class="my-4"><p>{{ posting.posted_date }}</p></h5>
-    <img src="{{ posting.photo_main.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-    <hr>
-    <p>{{ posting.description }}</p>
-    {% if posting.photo_1 %}
-        <img src="{{ posting.photo_1.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.blogcopy_main %}
-        <p>{{ posting.blogcopy_main }}</p>
-    {% endif %}
-    {% if posting.photo_2 %}
-        <img src="{{ posting.photo_2.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.blogcopy_1 %}
-        <p>{{ posting.blogcopy_1 }}</p>
-    {% endif %}
-    {% if posting.photo_3 %}
-        <img src="{{ posting.photo_3.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.blogcopy_2 %}
-        <p>{{ posting.blogcopy_2 }}</p>
-    {% endif %}
-    {% if posting.photo_4 %}
-        <img src="{{ posting.photo_4.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.blogcopy_3 %}
-        <p>{{ posting.blogcopy_3 }}</p>
-    {% endif %}
-    {% if posting.photo_5 %}
-        <img src="{{ posting.photo_5.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_6 %}
-        <img src="{{ posting.photo_6.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_7 %}
-        <img src="{{ posting.photo_7.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_8 %}
-        <img src="{{ posting.photo_8.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_9 %}
-        <img src="{{ posting.photo_9.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_10 %}
-        <img src="{{ posting.photo_10.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_11 %}
-        <img src="{{ posting.photo_11.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
-    {% if posting.photo_12 %}
-        <img src="{{ posting.photo_12.url }}" class="img-fluid rounded mb-3 mb-md-0" alt="Responsive image">
-        <hr>
-    {% endif %}
+    {% include 'partials/_posting_title.html' %}
+    {% include 'partials/_posting_content.html' %}
     </div>
 </div>
 </section>
