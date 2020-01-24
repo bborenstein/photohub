@@ -1,67 +1,9 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-    <!-- Page Content -->
-    <div class="container">
-    <!-- Portfolio Item Heading -->
-    <h1 class="my-4">Photography by Bryan
-      <small><!--maybe--></small>
-    </h1>
-    <!-- Portfolio Item Row --> 
-    <div class="row">
-        <div class="col-md-8">
-                    <img class="img-fluid" src="https://files.catbox.moe/z18o2w.jpeg" alt="">
-        </div>
-            <div class="col-md-4">
-                <h3 class="my-3">Project Description<h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                <h3 class="my-3">Project Details</h3>
-                <ul>
-                <li>Lorem Ipsum</li>
-            <li>Dolor Sit Amet</li>
-                <li>Consectetur</li>
-                <li>Adipiscing Elit</li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-        <!-- Related Projects Row -->
-        <h3 class="my-4">Recent Blog Posts</h3>
-    </div>
-        <section id="listings" class="py-4">
-            <div class="container">
-            <div class="row">
-                {% if postings %}
-                    {% for posting in postings  %}
-                        <!-- Featured (3 Most Recent) Postings -->
-                        <div class="col-md-6 col-lg-4 mb-4">
-                            <div class="card listing-preview">
-                                <img class="card-img-top" src="{{ posting.photo_main.url }}" alt="">
-                                <div class="card-img-overlay">
-                                </div>
-                                <div class="card-body">
-                                <div class="listing-heading text-center">
-                                    <h4 class="text-dark">{{ posting.title }}</h4>
-                                    <p><i class="fas fa-map text-secondary"></i> {{ posting.location }}</p>
-                                    <p><i class="fas fa-map-marker text-secondary"></i> {{ posting.city }}, {{ posting.state }}</p>
-                                </div>
-                                <hr>
-                                <div class="row text-secondary pb-2">
-                                    <div class="col-12">
-                                    <i class="fas fa-clock"></i> Published: {{ posting.posted_date }}</div>
-                                </div>
-                                <hr>
-                                <a href="{% url 'posting' posting.id %}" class="btn btn-primary btn-block">View Post</a>
-                                </div>
-                            </div>
-                        </div>         
-                    {% endfor %}
-                {% else %}
-                    <div class="col-md-12">
-                        <p>No Featured Posts!</p>
-                    </div>
-                {% endif %}               
-            </section>
+    <!-- Main Feature -->
+    {% include 'partials/_main_feature.html' %}
+    <!-- Recent Blog Posts-->
+    {% include 'partials/_feature_latest.html' %}
 {% endblock %}
     

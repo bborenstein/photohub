@@ -7,55 +7,29 @@
     Featured Blog Posts
   </h1>
     <!-- All Projects Contained Here | Fetched via Context Variable -->
-      {% if postings %}
-        <!-- Loop Through postings_posting Postgres Table and Display Dynamic Values -->    
-        {% for posting in postings %}
-          <div class="row">
-            <div class="col-md-7">      
-              <a href="#">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ posting.photo_main.url }}" alt="">
-              </a>
-            </div>
-            <div class="col-md-5">
-              <h3>{{ posting.title }}</h3>
-              <p>{{ posting.description }}</p>
-              <a class="btn btn-primary" href="{% url 'posting' posting.id %}">View Blog Post</a>
-            </div> 
+    {% if postings %}
+      <!-- Loop Through postings_posting Postgres Table and Display Dynamic Values -->    
+      {% for posting in postings %}
+        <div class="row">
+          <div class="col-md-7">      
+            <a href="{% url 'posting' posting.id %}">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="{{ posting.photo_main.url }}" alt="">
+            </a>
           </div>
-          <!-- Hard Break Styling -->
-          <hr>
-        {% endfor %}
+          <div class="col-md-5">
+            <h3>{{ posting.title }}</h3>
+              <p>{{ posting.description }}</p>
+          </div> 
+        </div>
+        <!-- Hard Break Styling -->
+        <hr>
+      {% endfor %}
       <!-- If None Exist, Return This-->
       {% else %}
         <div class="col-md-12">
           <p>No Postings!</p>
         </div>
       {% endif %}
-  <!-- Pagination | Check For Other Pages -->
-  {% if postings.has_other_pages %}
-    <ul class="pagination justify-content-center">
-      {% if postings.has_previous %}
-        <li class="page-item">
-          <a href="?page={{postings.previous_page_number}}" class="page-link">&laquo;</a>
-        </li>
-      {% else %}
-        <li class="page-item disabled">
-          <a class="page-link">&laquo;</a>
-        </li>
-      {% endif %}
-      {% for i in postings.paginator.page_range %}       
-        {% if postings.number == i %}
-          <li class="page-item active">
-            <a class="page-link">{{i}}</a>
-          </li>
-        {% else %}
-          <li class="page-item">
-            <a href="?page={{i}}" class="page-link">{{i}}</a>
-          </li>
-        {% endif %}
-      {% endfor %}  
-    </ul>
-  {% endif %}
 </div>
 {% endblock %}
     

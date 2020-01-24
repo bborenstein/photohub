@@ -5,7 +5,6 @@ from postings.models import Posting
 from photographers.models import Photographer
 
 # Create Functions To Render html Template Files
-# Allows 'urls.py' To Call Views By Name
 def index(request):
     # [:3] Limits Featured To Only Most Recent 3 Postings
     postings = Posting.objects.order_by('-posted_date').filter(is_published=True)[:3]

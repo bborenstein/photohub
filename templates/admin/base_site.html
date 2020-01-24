@@ -1,8 +1,5 @@
 {% extends 'admin/base.html' %}
-
-<!-- block creates customized header to admin portal -->
+<!-- Custom Admin Portal Title -->
 {% block branding %}
-    <h1>
-        Photo by Bryan Administration Portal
-    </h1>
+    {% include 'partials/_admin_title.html' %}
 {% endblock %}

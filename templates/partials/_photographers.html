@@ -1,0 +1,26 @@
+<div class="row">
+    {% if photographers %}
+      {% for photographer in photographers %}
+        <!-- Grid column -->
+        <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+          <div class="avatar mx-auto">
+            <img src="{{ photographer.photo.url }}" class="rounded-circle z-depth-1"
+              alt="Sample avatar">
+          </div>
+          <h5 class="font-weight-bold mt-4 mb-3">{{ photographer.name }}</h5>
+          <p class="text-uppercase blue-text"><strong>{{ photographer.phone }}</strong></p>
+          <p class="grey-text">{{ photographer.about_me }}</p>
+          <ul class="list-unstyled mb-0">
+            <!-- Dynamic Telegram Info --> 
+            <a class="p-2 fa-lg fb-ic">
+              <i class="fab fa-telegram blue-text"> {{ photographer.telegram }}</i>
+            </a>
+          </ul>
+        </div>
+      {% endfor %}
+    {% else %}
+      <div class="col-md-12">
+        <p>No Photographers Working Here!</p> 
+      </div>
+    {% endif %}
+  </div>

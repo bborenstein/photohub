@@ -1,0 +1,36 @@
+<section id="listings" class="py-4">
+    <div class="container">
+        {% if postings %}
+        <div class="row">
+            {% for posting in postings  %}
+                <!-- Featured (3 Most Recent) Postings -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card listing-preview">
+                            <img class="card-img-top" src="{{ posting.photo_main.url }}" alt="">
+                            <div class="card-img-overlay">
+                            </div>
+                            <div class="card-body">
+                            <div class="listing-heading text-center">
+                                <h4 class="text-dark">{{ posting.title }}</h4>
+                                <p><i class="fas fa-map text-secondary"></i> {{ posting.location }}</p>
+                                <p><i class="fas fa-map-marker text-secondary"></i> {{ posting.city }}, {{ posting.state }}</p>
+                            </div>
+                            <hr>
+                            <div class="row text-secondary pb-2">
+                                <div class="col-md-12">
+                                <i class="fas fa-clock"></i> Published: {{ posting.posted_date }}</div>
+                            </div>
+                            <div class="row text-secondary pb-2">
+                                <div class="col-md-12">
+                                <i class="fas fa-camera"></i> Photographer: {{ posting.photographer }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Featured Posts!</p>
+            </div>
+        {% endif %}               
+    </section>
