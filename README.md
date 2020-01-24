@@ -6,6 +6,7 @@
 This Django project is a photography business blog, which utilizes the Django Admin Portal in order to upload photos, and write blog posts using a postgresql backend. 
 
 ### Live Demo:
+
 The photos used in this example are my own. Please contact me for permission.
 
 ### Contact Me:

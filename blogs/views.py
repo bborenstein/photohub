@@ -12,7 +12,7 @@ def index(request):
     context = {
         'postings': postings
     }
-    # Pass In Data As Variable For Feature Loop In HTML
+    L
     return render(request, 'blogs/index.html', context)
 
 def contact(request):
