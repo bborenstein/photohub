@@ -12,7 +12,7 @@ def index(request):
     context = {
         'postings': postings
     }
-    L
+    
     return render(request, 'blogs/index.html', context)
 
 def contact(request):
