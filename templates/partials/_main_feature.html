@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Home Page Featured Photo -->
 <div class="container">
     <!-- Portfolio Item Heading -->
@@ -7,7 +8,7 @@
     <!-- Portfolio Item Row --> 
     <div class="row">
         <div class="col-md-8">
-        <img class="img-fluid" src="https://files.catbox.moe/z18o2w.jpeg" alt="">
+        <img class="img-fluid" src="{% static 'index.jpeg' %}" alt="">
         </div>
             <div class="col-md-4">
                 {% include 'partials/_feature_copy.html' %}
